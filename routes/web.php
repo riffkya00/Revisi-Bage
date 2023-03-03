@@ -23,7 +23,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
+// Route Salah
+// Route::get('/', 'CheckOngkirController@index');
+// Route::post('/', 'CheckOngkirController@check_ongkir');
+// Route::get('/cities/{province_id}', 'CheckOngkirController@getCities');
 
-Route::get('/', 'CheckOngkirController@index');
-Route::post('/', 'CheckOngkirController@check_ongkir');
-Route::get('/cities/{province_id}', 'CheckOngkirController@getCities');
+// Route Benar
+Route::get('/ongkir', [CheckOngkirController::class, 'index']);
+Route::post('/ongkir', [CheckOngkirController::class, 'check_ongkir']);
+Route::get('/cities/{province_id}', [CheckOngkirController::class, 'getCities']);
